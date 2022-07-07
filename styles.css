@@ -12,6 +12,7 @@
 body{
     color: rgb(219, 217, 217);
     font-size: 16px;
+    font-family: 'Blinker', sans-serif;
 }
 
 .component-card{
@@ -20,8 +21,13 @@ body{
     height: 100vh;
 }
 
+.component-body{
+    flex-grow: 1;
+    padding: 0 1.75em;
+}
+
 .component-img-card{
-    height: 25%;
+    height: 35%;
 }
 
 .component-img{
@@ -32,26 +38,26 @@ body{
 
 .component-info{
     background-color: var(--bgColour);
-    height: 75%;
+    height: 65%;
     display: flex;
-    padding: 2em;
+    padding: 2.25em 0 2.25em;
     flex-flow: column nowrap;
-    justify-content: space-around;
 }
 
 .component-info .component-text{
-    line-height: 1.5em;
+    line-height: 1.7em;
     font-size: 1.25em;
+    margin-top: 1em;
+    opacity: 0.8;
 }
 
 .component-heading{
     color: var(--foreColour);
-    font-size: 2.25em;
-    font-weight: 900;
+    font-size: 1.75em;
+    font-weight: 700;
 }
 
 .component-more-info{
-    margin-top: 20em;
     display: flex;
     justify-content: space-around;
 }
@@ -61,16 +67,57 @@ body{
     background-color: var(--foreColour);
     color: var(--bgColour);
     font-weight: 600;
-    padding: 0.25em 0.5em;
+    align-self: flex-end;
+    border: none;
+    cursor: pointer;
+    padding: 0.25em 1.5em;
+}
+
+.component-info button:hover, 
+.component-info button:focus{
+    background-color: var(--bgColour);
+    color: var(--foreColour);
+    border: var(--foreColour) 1px solid;
+    transition: background-color 1s;
 }
 
 .component-read-time{
-    font-size: 1.4em;
+    font-size: 1em;
     flex-basis: 70px;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.mins{
+    font-size: 2em;
+    font-weight: 700;
 }
 
 @media screen and (min-width: 500px){
+
+    body{
+        font-size: 18px;
+    }
     .component-card{
         flex-direction: row;
+    }
+    .component-img-card{
+        height: 100%;
+        width: 400px;
+    }
+
+    .component-info{
+        height: 100%;
+        width: 60%;
+        flex-grow: 1;
+    }
+
+    .component-heading{
+        font-size: 2em;
+    }
+
+    .component-more-info{
+        padding: 0 3em;
+        justify-content: space-between;
     }
 }
